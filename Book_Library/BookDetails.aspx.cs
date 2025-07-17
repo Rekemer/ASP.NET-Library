@@ -8,8 +8,8 @@ namespace Book_Library
         {
             get
             {
-                long v;
-                return long.TryParse(Request.QueryString["isbn"], out v) ? v : 0L;
+                long v = 0;
+                return long.TryParse(Request.QueryString["isbn"], out v) ? v : 0;
             }
         }
 
@@ -17,38 +17,39 @@ namespace Book_Library
         {
             if (!IsPostBack && ISBN != 0)
             {
-                var row = Dal.BookGet(ISBN);
+                var row = DataBaseService.BookGet(ISBN);
                 if (row != null)
                 {
-                    txtISBN.Text = row["ISBN"].ToString();
-                    txtISBN.Enabled = false;
-                    txtTitle.Text = row["Title"].ToString();
-                    txtAuthor.Text = row["Author"].ToString();
-                    txtPublishDate.Text = Convert.ToDateTime(row["PublishDate"]).ToString("yyyy-MM-dd");
-                    txtPrice.Text = Convert.ToDecimal(row["Price"]).ToString("0.00");
-                    chkPublish.Checked = Convert.ToBoolean(row["Publish"]);
+                    textISBN.Text = row["ISBN"].ToString();
+                    textISBN.Enabled = false;
+                    textTitle.Text = row["Title"].ToString();
+                    labelHeader.Text = textTitle.Text;   
+                    textAuthor.Text = row["Author"].ToString();
+                    textPublishDate.Text = Convert.ToDateTime(row["PublishDate"]).ToString("yyyy-MM-dd");
+                    textPrice.Text = Convert.ToDecimal(row["Price"]).ToString("0.00");
+                    checkPublish.Checked = Convert.ToBoolean(row["Publish"]);
                 }
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void Save(object sender, EventArgs e)
         {
-            long isbn = long.Parse(txtISBN.Text);
-            string title = txtTitle.Text.Trim();
-            string author = txtAuthor.Text.Trim();
-            DateTime pubDate = DateTime.Parse(txtPublishDate.Text);
-            decimal price = decimal.Parse(txtPrice.Text);
-            bool publish = chkPublish.Checked;
+            long isbn = long.Parse(textISBN.Text);
+            string title = textTitle.Text.Trim();
+            string author = textAuthor.Text.Trim();
+            DateTime pubDate = DateTime.Parse(textPublishDate.Text);
+            decimal price = decimal.Parse(textPrice.Text);
+            bool publish = checkPublish.Checked;
 
             if (ISBN == 0)
-                Dal.BookInsert(isbn, title, author, pubDate, price, publish);
+                DataBaseService.BookInsert(isbn, title, author, pubDate, price, publish);
             else
-                Dal.BookUpdate(isbn, title, author, pubDate, price, publish);
+                DataBaseService.BookUpdate(isbn, title, author, pubDate, price, publish);
 
             Response.Redirect("Books.aspx");
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
+        protected void Cancel(object sender, EventArgs e)
         {
             Response.Redirect("Books.aspx");
         }

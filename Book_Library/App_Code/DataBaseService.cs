@@ -5,7 +5,8 @@ using System.Configuration;
 
 namespace Book_Library
 {
-    public static class Dal
+    public static class DataBaseService
+
     {
         private static string Conn
             => ConfigurationManager.ConnectionStrings["LibraryConn"].ConnectionString;
@@ -14,7 +15,7 @@ namespace Book_Library
         {
             using (var cn = new SqlConnection(Conn))
             {
-                using (var cmd = new SqlCommand("usp_Book_List", cn))
+                using (var cmd = new SqlCommand("Book_List", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (var da = new SqlDataAdapter(cmd))
@@ -31,7 +32,7 @@ namespace Book_Library
         {
             using (var cn = new SqlConnection(Conn))
             {
-                using (var cmd = new SqlCommand("usp_Book_Get", cn))
+                using (var cmd = new SqlCommand("Book_Get", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ISBN", isbn);
@@ -51,7 +52,7 @@ namespace Book_Library
         {
             using (var cn = new SqlConnection(Conn))
             {
-                using (var cmd = new SqlCommand("usp_Book_Insert", cn))
+                using (var cmd = new SqlCommand("Book_Insert", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ISBN", isbn);
@@ -72,7 +73,7 @@ namespace Book_Library
         {
             using (var cn = new SqlConnection(Conn))
             {
-                using (var cmd = new SqlCommand("usp_Book_Update", cn))
+                using (var cmd = new SqlCommand("Book_Update", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ISBN", isbn);
@@ -92,7 +93,7 @@ namespace Book_Library
         {
             using (var cn = new SqlConnection(Conn))
             {
-                using (var cmd = new SqlCommand("usp_Book_Delete", cn))
+                using (var cmd = new SqlCommand("Book_Delete", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ISBN", isbn);

@@ -15,84 +15,84 @@ namespace Book_Library
     {
 
         /// <summary>
-        /// lblHeader control.
+        /// labelHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHeader;
+        protected global::System.Web.UI.WebControls.Label labelHeader;
 
         /// <summary>
-        /// txtISBN control.
+        /// textISBN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtISBN;
+        protected global::System.Web.UI.WebControls.TextBox textISBN;
 
         /// <summary>
-        /// txtTitle control.
+        /// textTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.TextBox textTitle;
 
         /// <summary>
-        /// txtAuthor control.
+        /// textAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAuthor;
+        protected global::System.Web.UI.WebControls.TextBox textAuthor;
 
         /// <summary>
-        /// txtPublishDate control.
+        /// textPublishDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPublishDate;
+        protected global::System.Web.UI.WebControls.TextBox textPublishDate;
 
         /// <summary>
-        /// txtPrice control.
+        /// textPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrice;
+        protected global::System.Web.UI.WebControls.TextBox textPrice;
 
         /// <summary>
-        /// chkPublish control.
+        /// checkPublish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkPublish;
+        protected global::System.Web.UI.WebControls.CheckBox checkPublish;
 
         /// <summary>
-        /// btnSave control.
+        /// buttonSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.Button buttonSave;
 
         /// <summary>
-        /// btnCancel control.
+        /// buttonCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button buttonCancel;
     }
 }

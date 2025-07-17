@@ -5,28 +5,44 @@
          Inherits="Book_Library.Books"
          Title="Books" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Books</h2>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:GridView ID="gvBooks" runat="server"
+    <h2>Books</h2>
+    <asp:SqlDataSource ID="booksDataSource" runat="server"
+        ConnectionString="<%$ ConnectionStrings:LibraryConn %>"
+        SelectCommand="Book_List"
+        SelectCommandType="StoredProcedure" />
+
+    <asp:GridView ID="booksGridView" runat="server"
+        DataSourceID="booksDataSource"
         AutoGenerateColumns="False"
-        CssClass="table"
         DataKeyNames="ISBN"
-        OnSelectedIndexChanged="gvBooks_SelectedIndexChanged">
+        Width ="100%"
+        HeaderStyle-BackColor="#0066CC"
+        HeaderStyle-ForeColor="White"
+        HeaderStyle-Font-Bold="true"
+        HeaderStyle-HorizontalAlign="Left"
+        RowStyle-Padding="3"
+        AlternatingRowStyle-BackColor="#F8F8F8"
+        OnSelectedIndexChanged="Selected"
+      >
+
         <Columns>
-          
             <asp:CommandField ShowSelectButton="True" SelectText="Select" />
-            <asp:BoundField DataField="ISBN" HeaderText="ISBN" ReadOnly="True" />
-            <asp:BoundField DataField="Title" HeaderText="Title" />
-            <asp:BoundField DataField="Author" HeaderText="Author" />
-            <asp:BoundField DataField="PublishDate" HeaderText="PublishDate" DataFormatString="{0:d}" />
-            <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}" />
-            <asp:CheckBoxField DataField="Publish" HeaderText="Publish" />
+            <asp:BoundField DataField="ISBN"         HeaderText="ISBN"         ReadOnly="True" />
+            <asp:BoundField DataField="Title"        HeaderText="Title" />
+            <asp:BoundField DataField="Author"       HeaderText="Author" />
+            <asp:BoundField DataField="PublishDate"  HeaderText="Publish Date" DataFormatString="{0:dd/MM/yyyy}" />
+            <asp:BoundField DataField="Price"        HeaderText="Price"        DataFormatString="{0:N2}" HtmlEncode="False" />
+            <asp:CheckBoxField DataField="Publish"   HeaderText="Publish" />
         </Columns>
     </asp:GridView>
 
-    <asp:Button ID="btnAdd"    runat="server" Text="Add"    OnClick="btnAdd_Click"  CssClass="btn" />
-    <asp:Button ID="btnEdit"   runat="server" Text="Edit"   OnClick="btnEdit_Click" CssClass="btn" Enabled="false" />
-    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" CssClass="btn" Enabled="false" />
-</asp:Content>
+    <asp:Button ID="buttonAdd"    runat="server" Text="Add"    CssClass="button"
+                OnClick="Add"  />
+    <asp:Button ID="buttonEdit"   runat="server" Text="Edit"   CssClass="button"
+                OnClick="Edit" Enabled="false" />
+    <asp:Button ID="buttonDelete" runat="server" Text="Delete" CssClass="button"
+                OnClick="Delete" Enabled="false" />
 
+</asp:Content>

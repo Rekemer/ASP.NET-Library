@@ -15,39 +15,48 @@ namespace Book_Library
     {
 
         /// <summary>
-        /// gvBooks control.
+        /// booksDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvBooks;
+        protected global::System.Web.UI.WebControls.SqlDataSource booksDataSource;
 
         /// <summary>
-        /// btnAdd control.
+        /// booksGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.GridView booksGridView;
 
         /// <summary>
-        /// btnEdit control.
+        /// buttonAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.Button buttonAdd;
 
         /// <summary>
-        /// btnDelete control.
+        /// buttonEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Button buttonEdit;
+
+        /// <summary>
+        /// buttonDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonDelete;
     }
 }

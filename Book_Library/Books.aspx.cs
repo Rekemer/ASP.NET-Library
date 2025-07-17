@@ -6,7 +6,7 @@ namespace Book_Library
     {
         private long SelectedISBN
         {
-            get { return ViewState["ISBN"] == null ? 0L : (long)ViewState["ISBN"]; }
+            get { return ViewState["ISBN"] == null ? 0 : (long)ViewState["ISBN"]; }
             set { ViewState["ISBN"] = value; }
         }
 
@@ -17,36 +17,35 @@ namespace Book_Library
 
         private void BindGrid()
         {
-            gvBooks.DataSource = Dal.BookList();
-            gvBooks.DataBind();
+            booksGridView.DataBind();
         }
 
-        protected void gvBooks_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Selected(object sender, EventArgs e)
         {
-            SelectedISBN = Convert.ToInt64(gvBooks.SelectedDataKey.Value);
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            SelectedISBN = Convert.ToInt64(booksGridView.SelectedDataKey.Value);
+            buttonEdit.Enabled = true;
+            buttonDelete.Enabled = true;
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void Add(object sender, EventArgs e)
         {
             Response.Redirect("BookDetails.aspx");
         }
 
-        protected void btnEdit_Click(object sender, EventArgs e)
+        protected void Edit(object sender, EventArgs e)
         {
             if (SelectedISBN != 0)
                 Response.Redirect("BookDetails.aspx?isbn=" + SelectedISBN);
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
+        protected void Delete(object sender, EventArgs e)
         {
             if (SelectedISBN != 0)
             {
-                Dal.BookDelete(SelectedISBN);
+                DataBaseService.BookDelete(SelectedISBN);
                 BindGrid();
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                buttonEdit.Enabled = false;
+                buttonDelete.Enabled = false;
             }
         }
     }

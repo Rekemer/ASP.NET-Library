@@ -89,7 +89,7 @@
     <Compile Include="Books.aspx.designer.cs">
       <DependentUpon>Books.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\DAL.cs" />
+    <Compile Include="App_Code\DataBaseService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
