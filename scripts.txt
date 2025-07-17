@@ -1,0 +1,17 @@
+INSERT dbo.Books (ISBN, Title, Author, PublishDate, Price, Publish) VALUES
+(10000000001, 'The Idiot', 'Fyodor Dostoevsky', 2004-01-29, 15.99, 1),
+(10000000002, 'Fathers and Sons', 'Ivan Turgenev', 2008-08-12, 12.50, 1),
+(10000000003, 'Life and Fate', 'Vasily Grossman', 2006-11-14, 19.95, 1),
+(10000000004, 'Ware and Peace', 'Leo Tolstoy', 20011-08-24, 19.95, 1),
+(10000000005, 'Notes from Underground', 'Fyodor Dostoevsky', 2012-01-02, 9.99, 1);
+
+-- insert one
+EXEC dbo.usp_Book_Insert
+    @ISBN        = 97801411482857,
+    @Title       = N'Childhood',        -- N = Unicode safe
+    @Author      = N'Leo Tolstoy',
+    @PublishDate = '20040129',        -- ISO‑8601 date in single quotes
+    @Price       = 10.95,
+    @Publish     = 1;
+     -- list all
+EXEC dbo.usp_Book_List;

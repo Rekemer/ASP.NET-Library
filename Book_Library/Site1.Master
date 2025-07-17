@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" CodeBehind="Site1.master.cs"
+           Inherits="Book_Library.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Book Library</title>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link href="~/App_Themes/Library/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- THE one and only server form -->
+    <form id="form1" runat="server">
+
+        <!-- all page bodies land here -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+    </form>
+
+    <footer class="footer">
+        Copyright <%: DateTime.Now.Year %> – ZEBRA Book Library
+    </footer>
+</body>
+</html>

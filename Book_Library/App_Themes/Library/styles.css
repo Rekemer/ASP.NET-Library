@@ -1,0 +1,65 @@
+﻿/* ---------- base ---------- */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    margin: 0;
+    padding: 0 6px;
+    color: #000;
+}
+
+h2 { /* blue section titles */
+    margin: 0 0 8px 0;
+    color: #0066CC;
+}
+
+/* ---------- grid ---------- */
+table.table, .table th, .table td {
+    border: 1px solid #999;
+    border-collapse: collapse;
+}
+
+.table {
+    width: 100%;
+}
+
+    .table th {
+        background: #E5EEF7; /* light blue header */
+        padding: 3px 6px;
+        text-align: left;
+    }
+
+    .table td {
+        padding: 3px 6px;
+    }
+
+    .table tr:nth-child(even) td {
+        background: #F8F8F8; /* zebra striping */
+    }
+
+    /* command‑column “Select” link */
+    .table a {
+        color: #0066CC;
+        text-decoration: underline;
+    }
+
+/* ---------- buttons ---------- */
+button, input[type=submit], .btn, .aspNetDisabled { /* GridView buttons */
+    font-size: 9pt;
+    padding: 2px 10px;
+    margin-right: 4px;
+}
+
+/* disabled button look */
+.aspNetDisabled {
+    opacity: 0.5;
+}
+
+/* ---------- footer ---------- */
+footer {
+    margin-top: 12px;
+    padding: 6px 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #666;
+    border-top: 1px solid #999;
+}
